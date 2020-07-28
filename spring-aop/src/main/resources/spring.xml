@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="circle" class="org.milan.model.Circle"/>
+
+    <bean id="triangle" class="org.milan.model.Triangle">
+        <property name="name" value="Triangle-name"/>
+    </bean>
+
+    <bean id="shape" class="org.milan.service.ShapeService" autowire="byName"/>
+
+    <bean id="loggingAspect" class="org.milan.aspect.LoggingAspect"/>
+
+    <aop:config>
+        <aop:aspect id="LoggingAspect" ref="loggingAspect">
+            <aop:pointcut id="allGetters" expression="execution(public * get*())"></aop:pointcut>
+            <aop:around pointcut="execution(public * get*())" method="aroundAdvice"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>	
