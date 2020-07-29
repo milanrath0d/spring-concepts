@@ -16,6 +16,7 @@
         <module>spring-mvc</module>
         <module>spring-security</module>
         <module>spring-shell</module>
+        <module>spring-jersey</module>
     </modules>
 
     <properties>
