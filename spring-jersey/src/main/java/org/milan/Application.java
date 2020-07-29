@@ -3,6 +3,7 @@ package org.milan;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.milan.filter.PoweredByResponseFilter;
 import org.milan.resource.DateResource;
+import org.milan.resource.CustomResource;
 import org.milan.resource.MessageResource;
 import org.milan.resource.ProfileResource;
 import org.milan.resource.TestResource;
@@ -27,7 +28,8 @@ public class Application extends ResourceConfig {
         register(MessageResource.class);
         register(PoweredByResponseFilter.class);
         register(DateResource.class);
-        packages("org.milan.rest.messenger");
+        register(CustomResource.class);
+        packages("org.milan");
     }
 
 }
