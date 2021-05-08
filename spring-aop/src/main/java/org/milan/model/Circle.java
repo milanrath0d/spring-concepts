@@ -1,5 +1,10 @@
 package org.milan.model;
 
+/**
+ * Circle pojo
+ *
+ * @author Milan Rathod
+ */
 public class Circle {
 
     private String name;

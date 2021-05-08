@@ -33,7 +33,7 @@ public class SecurityFilter implements ContainerRequestFilter {
     private void checkAuth(ContainerRequestContext containerRequestContext) {
         List<String> authHeader = containerRequestContext.getHeaders().get(AUTHORIZATION_HEADER);
 
-        if (authHeader != null && authHeader.size() > 0) {
+        if (authHeader != null && !authHeader.isEmpty()) {
             String authToken = authHeader.get(0);
             authToken = authToken.replaceFirst(AUTHORIZATION_HEADER_PREFIX, "");
 

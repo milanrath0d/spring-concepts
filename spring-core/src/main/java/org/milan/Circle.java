@@ -9,10 +9,15 @@ import org.springframework.context.MessageSource;
 
 import javax.annotation.Resource;
 
+/**
+ * @author Milan Rathod
+ */
 public class Circle implements Shape, ApplicationEventPublisherAware {
 
     private Point point;
+
     private MessageSource messageSource;
+
     private ApplicationEventPublisher publisher;
 
     public MessageSource getMessageSource() {

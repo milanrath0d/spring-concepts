@@ -3,6 +3,11 @@ package org.milan.service;
 import org.milan.model.Circle;
 import org.milan.model.Triangle;
 
+/**
+ * Shape service
+ *
+ * @author Milan Rathod
+ */
 public class ShapeService {
 
     private Circle circle;

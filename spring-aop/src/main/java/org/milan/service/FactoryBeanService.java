@@ -3,12 +3,21 @@ package org.milan.service;
 import org.milan.model.Circle;
 import org.milan.model.Triangle;
 
+/**
+ * @author Milan Rathod
+ */
 public class FactoryBeanService {
 
     public Object getBean(String beanType) {
-        if (beanType.equals("shapeService")) return new ShapeServiceProxy();
-        if (beanType.equals("circle")) return new Circle();
-        if (beanType.equals("triange")) return new Triangle();
-        return null;
+        switch (beanType) {
+            case "shapeService":
+                return new ShapeServiceProxy();
+            case "circle":
+                return new Circle();
+            case "triangle":
+                return new Triangle();
+            default:
+                return null;
+        }
     }
 }

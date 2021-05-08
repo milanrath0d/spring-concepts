@@ -1,18 +1,32 @@
 package org.milan.aspect;
 
-import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
 
+/**
+ * Logging Aspect
+ *
+ * @author Milan Rathod
+ */
+@Aspect
 public class LoggingAspect {
 
-    public void aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+    /*public void aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
         try {
             System.out.println("Before Advice");
             proceedingJoinPoint.proceed();
             System.out.println("After Advice");
         } catch (Throwable e) {
-            System.out.println("After Thrwoing");
+            System.out.println("After Throwing");
         }
         System.out.println("Finally");
+    }*/
+
+    @AfterThrowing(pointcut = "execution(* org.milan.service..*Impl.*(..))", throwing = "ex")
+    public void afterExceptionThrowing(JoinPoint joinPoint, RuntimeException ex) {
+        System.out.println("string argument method called " + joinPoint.getArgs().toString());
+        System.out.println("string Return method called " + ex.toString());
     }
 
     /*@Pointcut(value = "execution(public String get*(..))")
@@ -30,17 +44,12 @@ public class LoggingAspect {
 		System.out.println("string Return method called "+returnString);
 	}
 	
-	@AfterThrowing(pointcut = "args(name)" , throwing = "ex")
-	public void ExceptionArgumentMethods(String name,RuntimeException ex){
-		System.out.println("string argument method called "+name);
-		System.out.println("string Return method called "+ex.toString());
-	}
-	
 	/*@Pointcut(value = "within(org.milan.springAop.model.Circle)")
 	public void allCircleMethods(){
 		
 	}
 	*/
+
     public void test() {
         System.out.println("test method");
     }

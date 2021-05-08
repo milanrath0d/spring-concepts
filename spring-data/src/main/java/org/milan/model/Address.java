@@ -12,7 +12,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Address {
 
-    private String city;
+    private final String city;
 
-    private String country;
+    private final String country;
 }

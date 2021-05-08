@@ -60,7 +60,7 @@
 
     <context:annotation-config/>
 
-    <context:component-scan base-package="org.milan.spring"/>
+    <context:component-scan base-package="org.milan"/>
 
     <!--
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>

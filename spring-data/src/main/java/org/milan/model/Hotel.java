@@ -20,14 +20,14 @@ public class Hotel {
     @Id
     private String id;
 
-    private String name;
+    private final String name;
 
     @Indexed(direction = IndexDirection.ASCENDING)
-    private int pricePerNight;
+    private final int pricePerNight;
 
-    private Address address;
+    private final Address address;
 
-    private List<Review> reviews;
+    private final List<Review> reviews;
 
     public Hotel(String name, int pricePerNight, Address address, List<Review> reviews) {
         this.name = name;

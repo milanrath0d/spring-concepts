@@ -6,6 +6,9 @@ import org.springframework.context.MessageSource;
 
 import javax.annotation.Resource;
 
+/**
+ * @author Milan Rathod
+ */
 public class Test implements Shape {
 
     private Point center;

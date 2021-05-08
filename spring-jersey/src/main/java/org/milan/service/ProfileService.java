@@ -14,7 +14,7 @@ import java.util.Map;
 @Service
 public class ProfileService {
 
-    private Map<String, Profile> profiles = Database.getProfiles();
+    private final Map<String, Profile> profiles = Database.getProfiles();
 
     public ProfileService() {
         profiles.put("milan", new Profile(1L, "milan", "milan", "rathod"));

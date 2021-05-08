@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * Exception Handler
+ *
+ * @author Milan Rathod
  */
 @ControllerAdvice
 public class GenericExceptionHandler {
 
     /**
      * Handle Null Pointer Exception
-     * @return
      */
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(value = NullPointerException.class)

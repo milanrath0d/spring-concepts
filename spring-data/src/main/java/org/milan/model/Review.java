@@ -12,9 +12,9 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Review {
 
-    private String userName;
+    private final String userName;
 
-    private int rating;
+    private final int rating;
 
-    private boolean approved;
+    private final boolean approved;
 }

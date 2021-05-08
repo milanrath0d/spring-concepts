@@ -20,11 +20,11 @@ public class CircleService {
 
     private static final String DB_LAYER_TYPE = "Hibernate";
 
-    private JdbcDaoImpl jdbcDaoImpl;
+    private final JdbcDaoImpl jdbcDaoImpl;
 
-    private HibernateDaoImpl hibernateDaoImpl;
+    private final HibernateDaoImpl hibernateDaoImpl;
 
-    private NamedParameterJdbcDaoImpl namedParameterJdbcDaoImpl;
+    private final NamedParameterJdbcDaoImpl namedParameterJdbcDaoImpl;
 
     CircleService(JdbcDaoImpl jdbcDaoImpl, HibernateDaoImpl hibernateDaoImpl,
                   NamedParameterJdbcDaoImpl namedParameterJdbcDaoImpl) {

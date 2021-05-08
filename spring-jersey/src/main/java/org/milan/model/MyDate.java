@@ -3,7 +3,7 @@ package org.milan.model;
 import lombok.Data;
 
 /**
- * Add Description
+ * Custom date
  *
  * @author Milan Rathod
  */

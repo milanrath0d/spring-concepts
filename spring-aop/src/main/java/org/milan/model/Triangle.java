@@ -1,5 +1,10 @@
 package org.milan.model;
 
+/**
+ * Triangle pojo
+ *
+ * @author Milan Rathod
+ */
 public class Triangle {
 
     private String name;

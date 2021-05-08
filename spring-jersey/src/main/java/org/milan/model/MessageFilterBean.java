@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.ws.rs.QueryParam;
 
+/**
+ * Message filter bean
+ *
+ * @author Milan Rathod
+ */
 @Data
 public class MessageFilterBean {
 

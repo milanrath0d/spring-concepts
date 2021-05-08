@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class MessageService {
 
-    private Map<Long, Message> messages = Database.getMessages();
+    private final Map<Long, Message> messages = Database.getMessages();
 
     public MessageService() {
         messages.put(1L, new Message(1L, "Hello 1", "Milan"));

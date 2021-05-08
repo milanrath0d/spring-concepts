@@ -16,8 +16,8 @@ import javax.ws.rs.ext.Provider;
 public class DataNotFoundExceptionMapper implements ExceptionMapper<DataNotFoundException> {
 
     @Override
-    public Response toResponse(DataNotFoundException exp) {
-        ErrorMessage errorMessage = new ErrorMessage(exp.getMessage(), 404, "Error");
+    public Response toResponse(DataNotFoundException exception) {
+        ErrorMessage errorMessage = new ErrorMessage(404, exception.getMessage(), "Error");
         return Response.status(Status.NOT_FOUND).entity(errorMessage).build();
     }
 

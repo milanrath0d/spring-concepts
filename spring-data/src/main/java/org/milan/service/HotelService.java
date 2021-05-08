@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Add Description
+ * Hotel service class
  *
  * @author Milan Rathod
  */
 @Service
 public class HotelService {
 
-    private HotelRepository hotelRepository;
+    private final HotelRepository hotelRepository;
 
     public HotelService(HotelRepository hotelRepository) {
         this.hotelRepository = hotelRepository;

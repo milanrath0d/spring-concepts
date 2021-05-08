@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+/**
+ * @author Milan Rathod
+ */
 @Data
 @NoArgsConstructor
 public class Comment {
@@ -13,7 +16,7 @@ public class Comment {
 
     private String message;
 
-    private Date Created;
+    private Date created;
 
     private String author;
 
