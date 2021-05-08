@@ -2,13 +2,7 @@ package org.milan.controller;
 
 import org.milan.model.User;
 import org.milan.service.UserService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,7 +15,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -45,5 +39,17 @@ public class UserController {
     @DeleteMapping("delete/{id}")
     public void delete(@PathVariable int id) {
         userService.delete(id);
+    }
+
+    /**
+     * Find list of users for which contains user or teamName fields
+     *
+     * @param name     name
+     * @param teamName team name
+     * @return list of users
+     */
+    @GetMapping("search")
+    public List<User> findByNameOrTeamName(@RequestParam String name, @RequestParam String teamName) {
+        return userService.findByNameOrTeamName(name, teamName);
     }
 }

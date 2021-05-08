@@ -2,11 +2,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Add Description
+ * Test configuration
  *
  * @author Milan Rathod
  */
 @Configuration
-@ComponentScan(basePackages = {"org.milan.spring"})
+@ComponentScan(basePackages = {"org.milan"})
 public class TestConfig {
 }

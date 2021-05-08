@@ -5,6 +5,8 @@ import lombok.Setter;
 
 /**
  * Address Class
+ *
+ * @author Milan Rathod
  */
 @Getter
 @Setter

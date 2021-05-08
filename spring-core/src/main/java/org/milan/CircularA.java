@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Add Description
+ * Bean A related to circular dependency
  *
  * @author Milan Rathod
  */

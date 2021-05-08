@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("/circle")
 public class CircleController {
 
-    private CircleService circleService;
+    private final CircleService circleService;
 
     public CircleController(CircleService circleService) {
         this.circleService = circleService;

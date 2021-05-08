@@ -17,6 +17,8 @@ import java.util.Date;
 
 /**
  * Student Class
+ *
+ * @author Milan Rathod
  */
 @Getter
 @Setter

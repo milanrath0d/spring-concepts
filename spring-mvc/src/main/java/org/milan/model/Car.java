@@ -6,6 +6,8 @@ import lombok.Setter;
 
 /**
  * Car Class
+ *
+ * @author Milan Rathod
  */
 @Setter
 @Getter

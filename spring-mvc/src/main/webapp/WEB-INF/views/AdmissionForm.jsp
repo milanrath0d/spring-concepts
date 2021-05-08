@@ -26,7 +26,7 @@
             <td>DOB<input type="text" name="dob"></td>
         </tr>
         <tr>
-            <td>Skils<select name="skills" multiple="multiple">
+            <td>Skills<select name="skills" multiple="multiple">
                 <option value="Core Java">Core Java</option>
                 <option value="Spring">Spring</option>
                 <option value="Hibernate">Hibernate</option>

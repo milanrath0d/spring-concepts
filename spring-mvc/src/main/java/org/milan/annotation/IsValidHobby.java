@@ -10,6 +10,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Custom annotation related to hobby validation
+ *
+ * @author Milan Rathod
+ */
 @Documented
 @Constraint(validatedBy = HobbyValidator.class)
 @Target({ElementType.FIELD})

@@ -20,7 +20,7 @@ public class MyDateConverterProvider implements ParamConverterProvider {
     @Override
     public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
 
-        if (rawType.getName().equals(MyDate.class.getName())) {
+        if (rawType.isAssignableFrom(MyDate.class)) {
             return new ParamConverter<T>() {
                 @Override
                 public T fromString(String value) {

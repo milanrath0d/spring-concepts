@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories(basePackages = "org.milan.repository")
 public class MongoConfig extends AbstractMongoConfiguration {
+
     @Override
     public MongoClient mongoClient() {
         return new MongoClient("127.0.0.1", 27017);

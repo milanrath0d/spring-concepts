@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
+/**
+ * Profile pojo
+ *
+ * @author Milan Rathod
+ */
 @XmlRootElement
 @Data
 @NoArgsConstructor
@@ -22,7 +27,6 @@ public class Profile {
     private Date created;
 
     public Profile(long id, String profileName, String firstName, String lastName) {
-        super();
         this.id = id;
         this.profileName = profileName;
         this.firstName = firstName;

@@ -15,7 +15,6 @@ import org.springframework.web.servlet.view.JstlView;
 /**
  * @author Milan Rathod
  */
-
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "org.milan")

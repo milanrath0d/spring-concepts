@@ -20,5 +20,4 @@ public interface HotelRepository extends MongoRepository<Hotel, String> {
     @Query(value = "{'address.city':?0}")
     List<Hotel> findByCity(String city);
 
-
 }

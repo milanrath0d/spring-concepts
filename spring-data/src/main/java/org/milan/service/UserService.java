@@ -15,7 +15,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -36,5 +36,9 @@ public class UserService {
 
     public void delete(int id) {
         userRepository.deleteById(id);
+    }
+
+    public List<User> findByNameOrTeamName(String name, String teamName) {
+        return userRepository.findAllByNameContainingOrTeamNameContaining(name, teamName);
     }
 }

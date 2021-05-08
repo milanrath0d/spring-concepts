@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  */
 public class SortParams {
 
-    private List<String> sortParamList;
+    private final List<String> sortParamList;
 
     public SortParams(String commaSeparatedString) {
         sortParamList = Arrays.stream(commaSeparatedString.split(","))

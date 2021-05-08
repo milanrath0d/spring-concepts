@@ -14,7 +14,8 @@ import java.util.Map;
  */
 @Service
 public class CommentService {
-    private Map<Long, Message> messages = Database.getMessages();
+
+    private final Map<Long, Message> messages = Database.getMessages();
 
     public List<Comment> getAllComments(long messageId) {
         Map<Long, Comment> comments = messages.get(messageId).getComments();

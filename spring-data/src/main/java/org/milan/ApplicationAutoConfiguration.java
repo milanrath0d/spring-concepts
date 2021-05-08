@@ -62,7 +62,7 @@ public class ApplicationAutoConfiguration {
         return sessionFactory;
     }
 
-    private final Properties hibernateProperties() {
+    private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
         return properties;

@@ -5,6 +5,9 @@ import org.milan.annotation.IsValidHobby;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * @author Milan Rathod
+ */
 public class HobbyValidator implements ConstraintValidator<IsValidHobby, String> {
 
     private String listOfHobbies;
@@ -15,12 +18,8 @@ public class HobbyValidator implements ConstraintValidator<IsValidHobby, String>
     }
 
     @Override
-    public boolean isValid(String studentHobby,
-                           ConstraintValidatorContext paramConstraintValidatorContext) {
-        if (studentHobby.matches(listOfHobbies)) {
-            return true;
-        }
-        return false;
+    public boolean isValid(String studentHobby, ConstraintValidatorContext paramConstraintValidatorContext) {
+        return studentHobby.matches(listOfHobbies);
     }
 
 }

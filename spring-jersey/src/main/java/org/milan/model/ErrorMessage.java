@@ -6,15 +6,18 @@ import lombok.NoArgsConstructor;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author Milan Rathod
+ */
 @XmlRootElement
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ErrorMessage {
 
-    private String errorMessage;
+    private int code;
 
-    private int errorCode;
+    private String message;
 
     private String documentation;
 

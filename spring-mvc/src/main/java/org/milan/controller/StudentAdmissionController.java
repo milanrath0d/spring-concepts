@@ -21,6 +21,8 @@ import java.util.Date;
 
 /**
  * Controller for Student Admission
+ *
+ * @author Milan Rathod
  */
 @Controller
 public class StudentAdmissionController {
@@ -50,17 +52,12 @@ public class StudentAdmissionController {
 
     /**
      * Adding Common Method to display Header Message in Every Page
-     *
-     * @param model
      */
     @ModelAttribute
     public void commonHeader(Model model) {
         model.addAttribute("headerMessage", "Admission Form");
     }
 
-    /**
-     * @return
-     */
     @GetMapping(value = "/admissionForm")
     public ModelAndView getAdmissionForm() {
 
@@ -75,11 +72,6 @@ public class StudentAdmissionController {
 
     }
 
-    /**
-     * @param student
-     * @param bindingResult
-     * @return
-     */
     @PostMapping(value = "/submitAdmissionForm")
     public ModelAndView submitAdmissionForm(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
 

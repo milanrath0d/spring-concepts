@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Calendar;
 
 /**
- * Class to Intercept Request
+ * Class responsible for intercepting incoming requests
+ *
+ * @author Milan Rathod
  */
 public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
 
@@ -38,7 +40,7 @@ public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
-                           ModelAndView modelAndView) throws Exception {
+                           ModelAndView modelAndView) {
         LOG.debug("Post Handle Method called: {}", request.getRequestURI());
     }
 
@@ -47,8 +49,7 @@ public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
      */
     @Override
     public void afterCompletion(HttpServletRequest request,
-                                HttpServletResponse response, Object handler, Exception ex)
-            throws Exception {
+                                HttpServletResponse response, Object handler, Exception ex) {
         LOG.debug("After Completion Method called: {}", request.getRequestURI());
     }
 }

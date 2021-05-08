@@ -1,7 +1,7 @@
 package org.milan.models;
 
 /**
- * Add Description
+ * Authentication response class
  *
  * @author Milan Rathod
  */
