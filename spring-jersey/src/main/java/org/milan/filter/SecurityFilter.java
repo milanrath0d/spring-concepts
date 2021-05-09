@@ -5,6 +5,7 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
@@ -37,7 +38,7 @@ public class SecurityFilter implements ContainerRequestFilter {
             String authToken = authHeader.get(0);
             authToken = authToken.replaceFirst(AUTHORIZATION_HEADER_PREFIX, "");
 
-            String userPass = Arrays.toString(Base64.getDecoder().decode(authToken));
+            String userPass = new String(Base64.getDecoder().decode(authToken), StandardCharsets.UTF_8);
 
             String[] result = userPass.split(":");
 

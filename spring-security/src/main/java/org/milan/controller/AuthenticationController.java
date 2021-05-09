@@ -1,4 +1,4 @@
-package org.milan.resources;
+package org.milan.controller;
 
 import org.milan.models.AuthenticationRequest;
 import org.milan.models.AuthenticationResponse;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Milan Rathod
  */
 @RestController
-public class HomeResource {
+public class AuthenticationController {
 
     @Autowired
     private AuthenticationManager authenticationManager;

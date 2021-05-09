@@ -42,8 +42,8 @@ public class ProfileService {
         return profile;
     }
 
-    public Profile deleteProfile(String profileName) {
-        return profiles.remove(profileName);
+    public void deleteProfile(String profileName) {
+        profiles.remove(profileName);
     }
 
 }

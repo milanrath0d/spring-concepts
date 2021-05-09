@@ -1,0 +1,17 @@
+# logging related config
+logging:
+  level:
+    root: INFO
+
+# mongo related config
+mongo:
+  host: 127.0.0.1
+  port: 27017
+  databaseName: test
+
+# enable spring actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
