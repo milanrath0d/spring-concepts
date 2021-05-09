@@ -43,8 +43,8 @@ public class CommentService {
         return comment;
     }
 
-    public Comment deleteComment(long messageId, long commentId) {
+    public void deleteComment(long messageId, long commentId) {
         Map<Long, Comment> comments = messages.get(messageId).getComments();
-        return comments.remove(commentId);
+        comments.remove(commentId);
     }
 }
