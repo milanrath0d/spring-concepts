@@ -2,7 +2,7 @@ package org.milan.repository;
 
 import org.milan.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Milan Rathod
  */
-@Component
+@Repository
 public interface UserRepository extends MongoRepository<User, Integer> {
 
     List<User> findAllByNameContainingOrTeamNameContaining(String name, String teamName);

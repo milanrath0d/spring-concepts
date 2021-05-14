@@ -2,6 +2,7 @@ package org.milan.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -14,6 +15,7 @@ import java.util.Calendar;
  *
  * @author Milan Rathod
  */
+@Component
 public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
 
     private static final Logger LOG = LoggerFactory.getLogger(MaintenanceInterceptor.class);
@@ -26,7 +28,7 @@ public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
                              HttpServletResponse response, Object handler) throws Exception {
         Calendar calender = Calendar.getInstance();
         int dayOfWeek = calender.get(Calendar.DAY_OF_WEEK);
-        if (dayOfWeek == 2) {
+        if (dayOfWeek == 1) {
             LOG.debug("Received Intercept Request for maintenance.");
             response.getWriter().print("Web Site under maintenance today");
             return false;

@@ -63,13 +63,7 @@ public class StudentAdmissionController {
 
         LOG.debug("Received Request for Admission Form");
 
-        String npe = "Test";
-        if (npe.equals("Test")) {
-            throw new NullPointerException();
-        }
-
         return new ModelAndView("AdmissionForm");
-
     }
 
     @PostMapping(value = "/submitAdmissionForm")
@@ -82,6 +76,5 @@ public class StudentAdmissionController {
         }
 
         return new ModelAndView("AdmissionSuccess");
-
     }
 }

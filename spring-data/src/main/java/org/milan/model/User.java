@@ -12,7 +12,7 @@ import javax.persistence.Id;
  *
  * @author Milan Rathod
  */
-@Document
+@Document(collection = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

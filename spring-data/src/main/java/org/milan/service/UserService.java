@@ -2,6 +2,8 @@ package org.milan.service;
 
 import org.milan.model.User;
 import org.milan.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,5 +42,9 @@ public class UserService {
 
     public List<User> findByNameOrTeamName(String name, String teamName) {
         return userRepository.findAllByNameContainingOrTeamNameContaining(name, teamName);
+    }
+
+    public Page<User> findAll(Pageable pageable) {
+        return userRepository.findAll(pageable);
     }
 }
