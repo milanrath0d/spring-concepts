@@ -2,12 +2,9 @@ package org.milan.controller;
 
 import org.milan.model.Circle;
 import org.milan.service.CircleService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,24 +23,32 @@ public class CircleController {
         this.circleService = circleService;
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public void create(@RequestBody Circle circle) {
         circleService.create(circle);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Circle get(@PathVariable int id) {
         return circleService.get(id);
     }
 
-    @GetMapping("/get/all")
+    @GetMapping
     public List<Circle> getAll() {
         return circleService.getAll();
     }
 
-    @GetMapping("/get/count")
+    @GetMapping("/count")
     public int getCount() {
         return circleService.getCount();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable int id) {
+        if (circleService.delete(id)) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
 }

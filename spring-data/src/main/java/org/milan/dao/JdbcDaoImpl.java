@@ -62,6 +62,14 @@ public class JdbcDaoImpl {
         return jdbcTemplate.query(sql, new CircleMapper());
     }
 
+    public boolean deleteCircle(int id) {
+        String sql = "DELETE FROM circle WHERE id = ?";
+
+        int update = jdbcTemplate.update(sql, id);
+
+        return update != 0;
+    }
+
     private static final class CircleMapper implements RowMapper<Circle> {
 
         @Override

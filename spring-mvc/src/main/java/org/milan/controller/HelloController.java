@@ -3,11 +3,9 @@ package org.milan.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Map;
 
 /**
  * Hello Controller
@@ -21,18 +19,15 @@ public class HelloController {
 
     /**
      * Hello API to Display Hello Page
-     *
-     * @param pathVars
-     * @return
      */
-    @RequestMapping("/hello/{userName}")
-    protected ModelAndView hello(@PathVariable Map<String, String> pathVars) {
+    @GetMapping("/hello/{userName}")
+    public ModelAndView hello(@PathVariable String userName) {
 
-        LOG.debug("Received Request for the user: {}", pathVars.get("userName"));
+        LOG.debug("Received Request for the user: {}", userName);
 
         ModelAndView modelAndView = new ModelAndView("HelloPage");
 
-        modelAndView.addObject("welcomeMessage", "Hi " + pathVars.get("userName") + ", welcome to the hello page");
+        modelAndView.addObject("welcomeMessage", "Hi " + userName + ", welcome to the hello page");
 
         return modelAndView;
     }

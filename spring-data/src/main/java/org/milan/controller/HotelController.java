@@ -4,14 +4,7 @@ import org.milan.model.Hotel;
 import org.milan.service.HotelService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,15 +17,16 @@ import java.util.List;
 @RequestMapping("/hotels")
 public class HotelController {
 
+    private static final Logger logger = LoggerFactory.getLogger(HotelController.class);
+
     private final HotelService hotelService;
 
     public HotelController(HotelService hotelService) {
         this.hotelService = hotelService;
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public List<Hotel> getAll() {
-        Logger logger = LoggerFactory.getLogger(HotelController.class);
         logger.trace("test");
         return hotelService.getAll();
     }

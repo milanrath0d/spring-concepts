@@ -49,6 +49,10 @@ public class CircleService {
         return getCount(DB_LAYER_TYPE);
     }
 
+    public boolean delete(int id) {
+        return jdbcDaoImpl.deleteCircle(id);
+    }
+
     private int getCount(String type) {
         if (type == null) {
             System.out.println("Unsupported type");

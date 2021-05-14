@@ -19,6 +19,6 @@ public class GenericExceptionHandler {
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(value = NullPointerException.class)
     public String handleNullPointerException() {
-        return "NullPointerException";
+        return "Error";
     }
 }

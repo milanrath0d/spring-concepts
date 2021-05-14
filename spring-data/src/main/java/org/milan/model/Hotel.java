@@ -14,7 +14,7 @@ import java.util.List;
  * @author Milan Rathod
  */
 @Getter
-@Document(collection = "Hotels")
+@Document(collection = "hotels")
 public class Hotel {
 
     @Id
