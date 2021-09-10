@@ -20,7 +20,7 @@ public class CustomItemWriter implements ItemWriter<User> {
     private UserRepository userRepository;
 
     @Override
-    public void write(List<? extends User> users) throws Exception {
+    public void write(List<? extends User> users) {
         userRepository.saveAll(users);
     }
 }
