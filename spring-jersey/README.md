@@ -1,3 +1,3 @@
-# messenger
+# SpringJersey
 
 REST Based Messenger App
