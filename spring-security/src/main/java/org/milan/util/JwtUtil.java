@@ -53,19 +53,19 @@ public final class JwtUtil {
 
     private static Claims extractAllClaims(String token) {
         return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(token)
-                .getBody();
+            .setSigningKey(SECRET_KEY)
+            .parseClaimsJws(token)
+            .getBody();
     }
 
     private static String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
-                .setClaims(claims)
-                .setSubject(subject)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 60))
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
-                .compact();
+            .setClaims(claims)
+            .setSubject(subject)
+            .setIssuedAt(new Date(System.currentTimeMillis()))
+            .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 60))
+            .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+            .compact();
     }
 
 }

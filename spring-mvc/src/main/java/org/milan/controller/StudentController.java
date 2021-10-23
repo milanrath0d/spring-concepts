@@ -30,7 +30,7 @@ public class StudentController {
         List<Student> students = DummyStudents.allStudents();
 
         Optional<Student> result = students.stream().filter(student -> student.getName().equals(name))
-                .findFirst();
+            .findFirst();
 
         return result.orElse(null);
     }
@@ -49,9 +49,9 @@ public class StudentController {
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Location",
-                ServletUriComponentsBuilder.fromCurrentRequest()
-                        .path("/{name}")
-                        .buildAndExpand(student.getName()).toUriString());
+            ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{name}")
+                .buildAndExpand(student.getName()).toUriString());
 
         return new ResponseEntity<>(httpHeaders, HttpStatus.CREATED);
     }

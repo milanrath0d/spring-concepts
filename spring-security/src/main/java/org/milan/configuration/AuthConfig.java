@@ -37,10 +37,10 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 //                .and().formLogin();
 
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate").permitAll()
-                .anyRequest().authenticated()
-                .and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+            .authorizeRequests().antMatchers("/authenticate").permitAll()
+            .anyRequest().authenticated()
+            .and().sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 

@@ -15,8 +15,8 @@ public class SortParams {
 
     public SortParams(String commaSeparatedString) {
         sortParamList = Arrays.stream(commaSeparatedString.split(","))
-                .map(String::valueOf)
-                .collect(Collectors.toList());
+            .map(String::valueOf)
+            .collect(Collectors.toList());
     }
 
     public List<String> getSortParamList() {

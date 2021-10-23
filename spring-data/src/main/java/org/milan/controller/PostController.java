@@ -37,9 +37,9 @@ public class PostController {
     @GetMapping
     public List<PostDto> getAll() {
         return postService.getAll().
-                stream()
-                .map(this::convertToDto)
-                .collect(Collectors.toList());
+            stream()
+            .map(this::convertToDto)
+            .collect(Collectors.toList());
     }
 
     @PostMapping
