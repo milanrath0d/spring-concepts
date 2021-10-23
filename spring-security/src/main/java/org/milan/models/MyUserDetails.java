@@ -37,8 +37,8 @@ public class MyUserDetails implements UserDetails {
         this.password = user.getPassword();
         this.active = user.isActive();
         this.authorities = Arrays.stream(user.getRoles().split(","))
-                .map(SimpleGrantedAuthority::new)
-                .collect(Collectors.toList());
+            .map(SimpleGrantedAuthority::new)
+            .collect(Collectors.toList());
     }
 
     @Override

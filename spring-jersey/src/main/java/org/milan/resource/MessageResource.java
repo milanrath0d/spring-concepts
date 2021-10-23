@@ -81,7 +81,7 @@ public class MessageResource {
         String id = String.valueOf(newMessage.getId());
         URI uri = uriInfo.getAbsolutePathBuilder().path(id).build();
         return Response.created(uri).
-                entity(newMessage).build();
+            entity(newMessage).build();
     }
 
     @PUT
@@ -119,8 +119,8 @@ public class MessageResource {
 
     private String getUriForComments(UriInfo uriInfo, Message message) {
         String uri = uriInfo.getBaseUriBuilder().path(MessageResource.class).
-                path(MessageResource.class, "getCommentResource").
-                path(CommentResource.class).resolveTemplate("messageId", message.getId()).build().toString();
+            path(MessageResource.class, "getCommentResource").
+            path(CommentResource.class).resolveTemplate("messageId", message.getId()).build().toString();
         return uri;
     }
 }

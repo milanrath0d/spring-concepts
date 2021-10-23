@@ -35,9 +35,9 @@ public class RestClient {
         WebTarget singleMessageTarget = webTarget.path("{messageId}");
 
         Message message = singleMessageTarget
-                .resolveTemplate("messageId", 2)
-                .request(MediaType.APPLICATION_JSON)
-                .get(Message.class);
+            .resolveTemplate("messageId", 2)
+            .request(MediaType.APPLICATION_JSON)
+            .get(Message.class);
 
         System.out.println(message);
     }

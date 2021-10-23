@@ -26,7 +26,7 @@ public class NamedParameterJdbcDaoImpl extends NamedParameterJdbcDaoSupport {
         String sql = "INSERT INTO CIRCLE(id, name) VALUES(:id, :name)";
 
         SqlParameterSource namedParameters = new MapSqlParameterSource("id", circle.getId())
-                .addValue("name", circle.getName());
+            .addValue("name", circle.getName());
         this.getNamedParameterJdbcTemplate().update(sql, namedParameters);
     }
 }

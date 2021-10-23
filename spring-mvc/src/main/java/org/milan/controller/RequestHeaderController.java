@@ -51,8 +51,8 @@ public class RequestHeaderController {
     @GetMapping("/double")
     public ResponseEntity<String> doubleNumber(@RequestHeader("my-number") int myNumber) {
         return new ResponseEntity<>(
-                String.format("%d * 2 = %d", myNumber, (myNumber * 2)),
-                HttpStatus.OK);
+            String.format("%d * 2 = %d", myNumber, (myNumber * 2)),
+            HttpStatus.OK);
     }
 
     @GetMapping("/listHeaders")
@@ -83,15 +83,15 @@ public class RequestHeaderController {
 
     @GetMapping("/nonRequiredHeader")
     public ResponseEntity<String> evaluateNonRequiredHeader(
-            @RequestHeader(value = "optional-header", required = false) String optionalHeader) {
+        @RequestHeader(value = "optional-header", required = false) String optionalHeader) {
         return new ResponseEntity<>(
-                String.format("Was the optional header present? %s!", (optionalHeader == null ? "No" : "Yes")),
-                HttpStatus.OK);
+            String.format("Was the optional header present? %s!", (optionalHeader == null ? "No" : "Yes")),
+            HttpStatus.OK);
     }
 
     @GetMapping("/default")
     public ResponseEntity<String> evaluateDefaultHeaderValue(
-            @RequestHeader(value = "optional-header", defaultValue = "3600") int optionalHeader) {
+        @RequestHeader(value = "optional-header", defaultValue = "3600") int optionalHeader) {
         return new ResponseEntity<>(String.format("Optional Header is %d", optionalHeader), HttpStatus.OK);
     }
 }

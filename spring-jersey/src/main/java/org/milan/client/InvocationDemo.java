@@ -24,9 +24,9 @@ public class InvocationDemo {
         Client client = ClientBuilder.newClient();
 
         return client.target("http://localhost:8080/Messenger/webapi")
-                .path("messages")
-                .queryParam("year", year)
-                .request(MediaType.APPLICATION_JSON)
-                .buildGet();
+            .path("messages")
+            .queryParam("year", year)
+            .request(MediaType.APPLICATION_JSON)
+            .buildGet();
     }
 }

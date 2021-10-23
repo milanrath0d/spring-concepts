@@ -46,9 +46,9 @@ public class SecurityFilter implements ContainerRequestFilter {
             }
         }
         Response response = Response
-                .status(Response.Status.UNAUTHORIZED)
-                .entity("User can not access resource")
-                .build();
+            .status(Response.Status.UNAUTHORIZED)
+            .entity("User can not access resource")
+            .build();
         containerRequestContext.abortWith(response);
     }
 }

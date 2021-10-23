@@ -19,7 +19,7 @@ public @interface IsValidHobby {
     String listOfHobbies() default "Music|Movie|Cricket";
 
     String message() default "Please provide valid hobby " +
-            "Accepted hobbies are Music,Movie,Cricket";
+        "Accepted hobbies are Music,Movie,Cricket";
 
     Class<?>[] groups() default {};
 

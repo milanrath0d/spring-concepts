@@ -84,21 +84,21 @@ public class ApplicationAutoConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("org.milan.controller"))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(apiInfo());
+            .select()
+            .apis(RequestHandlerSelectors.basePackage("org.milan.controller"))
+            .paths(PathSelectors.any())
+            .build()
+            .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "My REST API",
-                "Some custom description of API.",
-                "API TOS",
-                "Terms of service",
-                new Contact("Milan Rathod", "www.example.com", "myeaddress@company.com"),
-                "License of API", "API license URL", Collections.emptyList());
+            "My REST API",
+            "Some custom description of API.",
+            "API TOS",
+            "Terms of service",
+            new Contact("Milan Rathod", "www.example.com", "myeaddress@company.com"),
+            "License of API", "API license URL", Collections.emptyList());
     }
 
 }

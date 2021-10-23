@@ -36,15 +36,15 @@ public class SpringBatchConfig {
                    ItemProcessor<User, User> itemProcessor,
                    ItemWriter<User> itemWriter) {
         Step step = stepBuilderFactory.get("ETL-file-load")
-                .<User, User>chunk(100)
-                .reader(itemReader)
-                .processor(itemProcessor)
-                .writer(itemWriter)
-                .build();
+            .<User, User>chunk(100)
+            .reader(itemReader)
+            .processor(itemProcessor)
+            .writer(itemWriter)
+            .build();
         return jobBuilderFactory.get("ETL-Load")
-                .incrementer(new RunIdIncrementer())
-                .start(step)
-                .build();
+            .incrementer(new RunIdIncrementer())
+            .start(step)
+            .build();
     }
 
     @Bean
