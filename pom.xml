@@ -20,6 +20,7 @@
         <module>spring-cloud-config-server</module>
         <module>spring-messaging</module>
         <module>spring-reactive</module>
+        <module>spring-scheduling</module>
     </modules>
 
     <properties>
