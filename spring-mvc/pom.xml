@@ -4,10 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-mvc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>spring-mvc</name>
-    <description>Spring MVC</description>
+    <description>Spring MVC Concepts</description>
 
     <parent>
         <groupId>org.milan</groupId>

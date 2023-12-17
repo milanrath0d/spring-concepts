@@ -1,11 +1,9 @@
-package org.milan.model;
+package org.milan.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Milan Rathod
@@ -14,13 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Employee {
-
-    @Id
-    private String id;
-
+public class CreateEmployeeRequest {
     private String name;
-
     private Long salary;
 }
