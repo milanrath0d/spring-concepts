@@ -2,7 +2,6 @@ package org.milan.resource;
 
 import org.milan.model.SortParams;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -21,7 +20,6 @@ import java.util.Map;
 @Path("/custom")
 @Produces(MediaType.APPLICATION_JSON)
 @Component
-@RefreshScope
 public class CustomResource {
 
     @Value("${test.msg: default msg}")
