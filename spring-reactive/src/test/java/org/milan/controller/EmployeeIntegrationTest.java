@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = EmployeeReactiveApplication.class)
-public class EmployeeControllerTest {
+public class EmployeeIntegrationTest {
 
     @Autowired
     private WebTestClient webTestClient;
@@ -33,7 +33,7 @@ public class EmployeeControllerTest {
 
     @Test
     public void givenEmployeeId_whenGetEmployeeById_thenCorrectEmployee() {
-        Employee employee = new Employee("1", "Employee 1 Name");
+        Employee employee = constructEmployee("1", "Employee 1 Name");
 
         when(employeeRepository.findById("1")).thenReturn(Mono.just(employee));
 
@@ -50,9 +50,9 @@ public class EmployeeControllerTest {
     public void whenGetAllEmployees_thenCorrectEmployees() {
         List<Employee> employeeList = new ArrayList<>();
 
-        Employee employee1 = new Employee("1", "Employee 1 Name");
-        Employee employee2 = new Employee("2", "Employee 2 Name");
-        Employee employee3 = new Employee("3", "Employee 3 Name");
+        Employee employee1 = constructEmployee("1", "Employee 1 Name");
+        Employee employee2 = constructEmployee("2", "Employee 2 Name");
+        Employee employee3 = constructEmployee("3", "Employee 3 Name");
 
         employeeList.add(employee1);
         employeeList.add(employee2);
@@ -70,6 +70,13 @@ public class EmployeeControllerTest {
             .expectBodyList(Employee.class)
             .hasSize(3)
             .isEqualTo(employeeList);
+    }
+
+    private Employee constructEmployee(String id, String name) {
+        return Employee.builder()
+          .id(id)
+          .name(name)
+          .build();
     }
 
 }

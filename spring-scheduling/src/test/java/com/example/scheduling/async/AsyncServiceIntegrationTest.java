@@ -1,6 +1,6 @@
 package com.example.scheduling.async;
 
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +16,19 @@ import java.util.concurrent.Future;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AsyncConfig.class}, loader = AnnotationConfigContextLoader.class)
-@Ignore
 class AsyncServiceIntegrationTest {
 
     @Autowired
     private AsyncService asyncService;
 
     @Test
+    @Disabled
     void testAsyncAnnotationForMethodsWithVoidReturnType() {
         asyncService.asyncMethodWithReturnType();
     }
 
     @Test
+    @Disabled
     void testAsyncAnnotationForMethodsWithReturnType() throws InterruptedException, ExecutionException {
         Future<String> future = asyncService.asyncMethodWithReturnType();
 

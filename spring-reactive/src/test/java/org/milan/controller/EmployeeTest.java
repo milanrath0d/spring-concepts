@@ -5,7 +5,7 @@ import org.milan.model.Employee;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class TestEmployee {
+public class EmployeeTest {
 
     @Test
     public void test() {
@@ -14,7 +14,7 @@ public class TestEmployee {
         Mono<Employee> employeeMono = dummyEmployeeService.getEmployee(2, "true");
 
         StepVerifier.create(employeeMono.log())
-            .expectNext(new Employee("transformedTest", "transformedTest"))
+            .expectNext(constructEmployee("transformedTest", "transformedTest"))
             .verifyComplete();
     }
 
@@ -27,19 +27,26 @@ public class TestEmployee {
         StepVerifier.create(employeeMono.log())
             .verifyComplete();
     }
+
+    private Employee constructEmployee(String id, String name) {
+        return Employee.builder()
+          .id(id)
+          .name(name)
+          .build();
+    }
 }
 
 class DummyEmployeeService {
     public Mono<Employee> getEmployee(int count, String flag) {
         return Mono.fromSupplier(() -> {
                 if (count == 1) {
-                    return new Employee("test", "test");
+                    return constructEmployee("test", "test");
                 }
                 return isTrue(flag);
             })
             .flatMap(result -> {
                 System.out.println("Test");
-                return Mono.fromSupplier(() -> new Employee("transformedTest", "transformedTest"));
+                return Mono.fromSupplier(() -> constructEmployee("transformedTest", "transformedTest"));
             })
             .onErrorResume(error -> {
                 System.out.println("Failed");
@@ -52,5 +59,12 @@ class DummyEmployeeService {
             throw new RuntimeException("test");
         }
         return Boolean.TRUE;
+    }
+
+    private Employee constructEmployee(String id, String name) {
+        return Employee.builder()
+          .id(id)
+          .name(name)
+          .build();
     }
 }
