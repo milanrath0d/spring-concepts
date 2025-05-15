@@ -1,23 +1,23 @@
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.milan.CircularA;
 import org.milan.CircularB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Test class for Circular Dependency
  *
  * @author Milan Rathod
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TestConfig.class})
-@Ignore
+@Disabled
 public class CircularDependencyTest {
 
     @Autowired
@@ -37,7 +37,7 @@ public class CircularDependencyTest {
     public void givenCircularDependency_whenConstructorInjection_thenItfails() {
         CircularA circularA = applicationContext.getBean(CircularA.class);
 
-        Assert.assertEquals("Hi", circularA.getCircularB().getMessage());
+        Assertions.assertEquals("Hi", circularA.getCircularB().getMessage());
     }
 
 
