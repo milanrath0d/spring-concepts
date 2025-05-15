@@ -1,10 +1,10 @@
 package org.milan.dto;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.milan.model.Post;
 import org.modelmapper.ModelMapper;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link PostDto}

@@ -23,8 +23,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void create(User user) {
-        userRepository.save(user);
+    public User create(User user) {
+        return userRepository.save(user);
     }
 
     public List<User> getAll() {
@@ -32,12 +32,12 @@ public class UserService {
     }
 
     public User get(int id) {
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = userRepository.findById(Integer.valueOf(id));
         return user.orElse(null);
     }
 
     public void delete(int id) {
-        userRepository.deleteById(id);
+        userRepository.deleteById(Integer.valueOf(id));
     }
 
     public List<User> findByNameOrTeamName(String name, String teamName) {

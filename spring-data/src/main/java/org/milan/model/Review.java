@@ -1,20 +1,22 @@
 package org.milan.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * Review pojo
+ * Review model for hotel reviews
  *
  * @author Milan Rathod
  */
-@Getter
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Review {
-
-    private final String userName;
-
-    private final int rating;
-
-    private final boolean approved;
+    
+    private String userName;
+    
+    private int rating;
+    
+    private String comment;
 }

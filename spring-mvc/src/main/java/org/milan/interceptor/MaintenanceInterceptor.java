@@ -3,11 +3,11 @@ package org.milan.interceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Calendar;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Calendar;
  * @author Milan Rathod
  */
 @Component
-public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
+public class MaintenanceInterceptor implements HandlerInterceptor {
 
     private static final Logger LOG = LoggerFactory.getLogger(MaintenanceInterceptor.class);
 

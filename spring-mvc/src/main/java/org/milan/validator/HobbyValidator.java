@@ -2,8 +2,8 @@ package org.milan.validator;
 
 import org.milan.annotation.IsValidHobby;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 /**
  * @author Milan Rathod

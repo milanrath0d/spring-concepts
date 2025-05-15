@@ -1,7 +1,7 @@
 package org.milan.resource;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 
 /**
  * Test Resource to verify various JAX-RS features

@@ -1,18 +1,20 @@
 package org.milan.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * Address pojo
+ * Address model for location information
  *
  * @author Milan Rathod
  */
-@Getter
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Address {
-
-    private final String city;
-
-    private final String country;
+    
+    private String city;
+    
+    private String country;
 }

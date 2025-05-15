@@ -2,7 +2,7 @@ package org.milan.model;
 
 import lombok.Data;
 
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.QueryParam;
 
 /**
  * Message filter bean

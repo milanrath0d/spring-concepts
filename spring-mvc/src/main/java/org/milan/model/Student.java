@@ -8,10 +8,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.milan.annotation.IsValidHobby;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 
