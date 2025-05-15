@@ -1,42 +1,24 @@
 package org.milan;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import lombok.Getter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
+ * MongoDB database settings
+ *
  * @author Milan Rathod
  */
-@Configuration
-@ConfigurationProperties("mongo")
+@Component
+@Getter
 public class DatabaseSettings {
 
+    @Value("${spring.data.mongodb.host:localhost}")
     private String host;
 
+    @Value("${spring.data.mongodb.port:27017}")
     private int port;
 
+    @Value("${spring.data.mongodb.database:test}")
     private String databaseName;
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public String getDatabaseName() {
-        return databaseName;
-    }
-
-    public void setDatabaseName(String databaseName) {
-        this.databaseName = databaseName;
-    }
 }

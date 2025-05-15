@@ -1,5 +1,9 @@
 package org.milan;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +15,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.sql.DataSource;
-import java.util.Collections;
 import java.util.Properties;
 
 /**
@@ -31,7 +27,6 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource({"classpath:persistence-mysql.properties"})
-@EnableSwagger2
 public class ApplicationAutoConfiguration {
 
     @Autowired
@@ -82,23 +77,18 @@ public class ApplicationAutoConfiguration {
     }
 
     @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-            .select()
-            .apis(RequestHandlerSelectors.basePackage("org.milan.controller"))
-            .paths(PathSelectors.any())
-            .build()
-            .apiInfo(apiInfo());
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("My REST API")
+                        .description("Some custom description of API.")
+                        .version("1.0")
+                        .contact(new Contact()
+                                .name("Milan Rathod")
+                                .url("www.example.com")
+                                .email("myeaddress@company.com"))
+                        .license(new License()
+                                .name("License of API")
+                                .url("API license URL")));
     }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfo(
-            "My REST API",
-            "Some custom description of API.",
-            "API TOS",
-            "Terms of service",
-            new Contact("Milan Rathod", "www.example.com", "myeaddress@company.com"),
-            "License of API", "API license URL", Collections.emptyList());
-    }
-
 }

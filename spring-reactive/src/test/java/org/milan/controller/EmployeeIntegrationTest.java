@@ -1,14 +1,14 @@
 package org.milan.controller;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.milan.EmployeeReactiveApplication;
 import org.milan.model.Employee;
 import org.milan.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 /**
  * @author Milan Rathod
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = EmployeeReactiveApplication.class)
 public class EmployeeIntegrationTest {
 
@@ -33,12 +33,12 @@ public class EmployeeIntegrationTest {
 
     @Test
     public void givenEmployeeId_whenGetEmployeeById_thenCorrectEmployee() {
-        Employee employee = constructEmployee("1", "Employee 1 Name");
+        Employee employee = constructEmployee("1", "Employee1");
 
-        when(employeeRepository.findById("1")).thenReturn(Mono.just(employee));
+        when(employeeRepository.findByName("Employee1")).thenReturn(Mono.just(employee));
 
         webTestClient.get()
-            .uri("/employees/1")
+            .uri("/employees/Employee1")
             .exchange()
             .expectStatus()
             .isOk()

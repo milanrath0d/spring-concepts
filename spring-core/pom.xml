@@ -12,7 +12,7 @@
     </parent>
 
     <properties>
-        <spring.version>4.3.24.RELEASE</spring.version>
+        <spring.version>6.1.2</spring.version>
     </properties>
 
     <dependencies>
@@ -27,8 +27,8 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
 
         <!-- Test Dependencies -->
@@ -38,8 +38,8 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

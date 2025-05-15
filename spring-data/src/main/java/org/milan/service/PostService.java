@@ -18,8 +18,8 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public void create(Post post) {
-        postRepository.save(post);
+    public Post create(Post post) {
+        return postRepository.save(post);
     }
 
     public List<Post> getAll() {

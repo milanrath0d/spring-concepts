@@ -24,12 +24,12 @@ public class HotelService {
         return hotelRepository.findAll();
     }
 
-    public void insert(Hotel hotel) {
-        hotelRepository.insert(hotel);
+    public Hotel insert(Hotel hotel) {
+        return hotelRepository.insert(hotel);
     }
 
-    public void update(Hotel hotel) {
-        hotelRepository.save(hotel);
+    public Hotel update(Hotel hotel) {
+        return hotelRepository.save(hotel);
     }
 
     public void delete(String id) {

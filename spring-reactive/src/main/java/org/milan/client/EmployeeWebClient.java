@@ -2,7 +2,6 @@ package org.milan.client;
 
 import org.milan.model.Employee;
 import org.milan.request.CreateEmployeeRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -56,7 +55,7 @@ public class EmployeeWebClient {
         webClient.get()
             .uri("/employees/{name}", "test1")
             .retrieve()
-            .onStatus(HttpStatus::isError, clientResponse -> {
+            .onStatus(statusCode -> statusCode.is4xxClientError() || statusCode.is5xxServerError(), clientResponse -> {
                 System.err.println(clientResponse);
                 return clientResponse.bodyToMono(String.class)
                     .flatMap(error -> Mono.error(new RuntimeException(error)));

@@ -3,8 +3,8 @@ package org.milan;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
-import javax.ws.rs.ApplicationPath;
+import jakarta.annotation.PostConstruct;
+import jakarta.ws.rs.ApplicationPath;
 
 /**
  * Application Config class

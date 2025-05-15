@@ -2,8 +2,8 @@ package org.milan.annotation;
 
 import org.milan.validator.HobbyValidator;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 import java.lang.annotation.*;
 
 /**
@@ -12,7 +12,7 @@ import java.lang.annotation.*;
  * @author Milan Rathod
  */
 @Documented
-@Constraint(validatedBy = HobbyValidator.class)
+@Constraint(validatedBy = {HobbyValidator.class})
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface IsValidHobby {

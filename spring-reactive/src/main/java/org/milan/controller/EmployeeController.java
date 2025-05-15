@@ -25,7 +25,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/{name}")
-    public Mono<Employee> getByName(@PathVariable String name) {
+    public Mono<Employee> getByName(@PathVariable("name") String name) {
         return employeeService.findByName(name);
     }
 
