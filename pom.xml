@@ -21,6 +21,7 @@
         <module>spring-reactive</module>
         <module>spring-scheduling</module>
         <module>spring-resilience4j</module>
+        <module>spring-vt</module>
     </modules>
 
     <properties>
