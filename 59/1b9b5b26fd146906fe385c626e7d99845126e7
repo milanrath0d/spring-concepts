@@ -1,0 +1,25 @@
+pom.xml
+  s_eb93971a648748::t_0011fef415fd29 89
+  s_eb93971a648748::t_9f4ddee0935514 118
+  s_eb93971a648748::t_beb0f88b30869d 31
+spring-vt/README.md
+  s_eb93971a648748::t_285b0768ca6b00 17
+.github/workflows/maven.yml
+  s_eb93971a648748::t_9184bf1773f029 19,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "591b9b5b26fd146906fe385c626e7d99845126e7",
+  "prompts": {},
+  "sessions": {
+    "s_eb93971a648748": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fee57744-3de9-4278-a1d0-649a9a63efd4",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mirathod <milan.rathod0510@gmail.com>"
+    }
+  }
+}
