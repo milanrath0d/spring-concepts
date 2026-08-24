@@ -1,7 +1,7 @@
 package org.milan.controller;
 
 import lombok.AllArgsConstructor;
-import org.milan.EmployeeService;
+import org.milan.service.EmployeeService;
 import org.milan.model.Employee;
 import org.milan.request.CreateEmployeeRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
