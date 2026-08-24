@@ -1,0 +1,23 @@
+pom.xml
+  s_eb93971a648748::t_f10ab4d6143b93 124
+  s_eb93971a648748::t_9801c8403c42b3 53-54,56
+  s_eb93971a648748::t_4a20b1d0f395ab 125-127
+  s_eb93971a648748::t_277893a7cb4bbd 55,94
+  s_eb93971a648748::t_4e4a1478e78424 52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "2d54cf0446bca6f90aa3af9f8f31e7f8db230c48",
+  "prompts": {},
+  "sessions": {
+    "s_eb93971a648748": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fee57744-3de9-4278-a1d0-649a9a63efd4",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mirathod <milan.rathod0510@gmail.com>"
+    }
+  }
+}
