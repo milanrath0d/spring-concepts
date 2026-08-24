@@ -1,4 +1,4 @@
-package org.milan;
+package org.milan.service;
 
 import lombok.AllArgsConstructor;
 import org.milan.model.Employee;
