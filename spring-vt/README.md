@@ -14,7 +14,7 @@ This demo showcases:
 
 ## Requirements
 
-- Java 21 or higher (Virtual Threads were officially released in Java 21)
+- Java 25 or higher (this repo builds with Java 25; Virtual Threads were officially released in Java 21)
 - Spring Boot 3.2+ (which has built-in support for Virtual Threads)
 
 ## Features
